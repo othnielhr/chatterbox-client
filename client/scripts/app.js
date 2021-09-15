@@ -11,23 +11,27 @@ var App = {
   initialize: function() {
     App.username = window.location.search.substr(10);
 
+    console.log('hello');
     FormView.initialize();
     RoomsView.initialize();
-    MessagesView.initialize();
+
 
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
+    MessagesView.initialize();
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
   },
 
   fetch: function(callback = ()=>{}) {
-    Parse.readAll((data) => {
+    // debugger;
+    return Parse.readAll((data) => {
+      console.log('inside parse.readAll');
       // examine the response from the server request:
-      console.log(data);
-
+      // console.log(data);
+      return Messages.retrieveFrom(data);
+      // return data;
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
     });
@@ -43,3 +47,5 @@ var App = {
     FormView.setStatus(false);
   }
 };
+// App.initialize();
+
