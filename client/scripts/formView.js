@@ -28,7 +28,7 @@ var FormView = {
     // Make this function actually send a message to the Parse API.
 
     console.log('click!', message);
-    Parse.create((message, pass, fail) => {});
+    Parse.create(message, pass, fail => {});
   },
 
   setStatus: function(active) {
