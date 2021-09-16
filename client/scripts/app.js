@@ -47,5 +47,4 @@ var App = {
     FormView.setStatus(false);
   }
 };
-// App.initialize();
 
