@@ -7,9 +7,11 @@ var MessageView = {
   // TODO: Update this template accordingly.
   render: _.template(`
       <div class="chat">
-        <div class="username"></div>
+        <div class="username"><%= username %></div>
+        <div class="text"><%= text %></div>
         <div></div>
       </div>
     `)
 
 };
+

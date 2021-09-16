@@ -8,15 +8,13 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
-    MessagesView.render();
   },
 
   render: function() {
     // TODO: Render _all_ the messages.
     // iterate over the messages._data
     // call renderMessage(i)
-    debugger;
-    console.log('inside render function', App.fetch());
+    // debugger;
     for (var i = 0; i < Messages._data.length; i++) {
 
       MessagesView.renderMessage(Messages._data[i]);
@@ -28,7 +26,7 @@ var MessagesView = {
     // takes a message 'the result of calling render function'
     // appends to a div on DOM
     var rendered = MessageView.render(message);
-    $chats.append(rendered);
+    this.$chats.append(rendered);
   },
 
   handleClick: function(event) {
