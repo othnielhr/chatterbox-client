@@ -10,12 +10,10 @@ var Messages = {
   retrieveFrom: function(messages) {
     this._data = [];
     this._data = this._data.concat(messages);
-    console.log(this._data);
+    // console.log(this._data);
     return this._data;
   },
 
-
-  addTo: function() {}
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
 
