@@ -19,7 +19,7 @@ var FormView = {
       roomname: Rooms._data
     };
     var pass = function() {
-      console.log('submitted message!!');
+      App.fetch();
     };
     var fail = function() {
       console.log('failed to submit message!!');
@@ -29,6 +29,7 @@ var FormView = {
 
     console.log('click!', message);
     Parse.create(message, pass, fail => {});
+    document.getElementById('message').value = '';
   },
 
   setStatus: function(active) {

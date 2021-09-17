@@ -8,7 +8,9 @@ var Messages = {
   _data: [],
 
   retrieveFrom: function(messages) {
+    this._data = [];
     this._data = this._data.concat(messages);
+    console.log(this._data);
     return this._data;
   },
 

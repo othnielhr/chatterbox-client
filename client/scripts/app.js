@@ -19,13 +19,17 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    setInterval(App.fetch, 5000);
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
   },
 
   fetch: function(callback = ()=>{}) {
     // debugger;
+
+
     Parse.readAll((data) => {
+      // console.log('inside fetch', data);
       // examine the response from the server request:
       // console.log(data);
       Messages.retrieveFrom(data);

@@ -11,6 +11,7 @@ var MessagesView = {
   },
 
   render: function() {
+    $('#chats').empty();
     // TODO: Render _all_ the messages.
     // iterate over the messages._data
     // call renderMessage(i)
