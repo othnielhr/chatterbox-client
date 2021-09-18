@@ -17,8 +17,11 @@ var MessagesView = {
     // call renderMessage(i)
     // debugger;
     for (var i = 0; i < Messages._data.length; i++) {
-
-      MessagesView.renderMessage(Messages._data[i]);
+      if (Rooms.currentRoom === Messages._data[i].roomname) {
+        MessagesView.renderMessage(Messages._data[i]);
+      } else if (Rooms.currentRoom === null) {
+        MessagesView.renderMessage(Messages._data[i]);
+      }
     }
   },
 

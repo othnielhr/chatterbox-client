@@ -7,7 +7,7 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    RoomsView.$button.on('submit', RoomsView.handleClick);
+    // working on the handle click for adding a room
   },
 
   render: function() {
@@ -36,17 +36,15 @@ var RoomsView = {
     var x = document.getElementById('select').value;
     // console.log(x);
     Rooms.currentRoom = x;
+    RoomsView.render();
   },
 
-  handleClick: function(event) {
+  handleClick: function() {
     // TODO: Handle the user clicking the "Add Room" button.
-    // when AddRoom is clicked (function() {
-    // takes data from input and add value to rooms._storage object
-    // })
-    $('#addroom').click(function() {
-      var newRoom = document.getElementById('addroom').value;
-      Rooms._storage[newRoom] = newRoom;
-    });
+    var newRoom = document.getElementById('addroom').value;
+    Rooms._storage[newRoom] = newRoom;
+    document.getElementById('addroom').value = '';
+    RoomsView.renderRoom();
   }
 
 };
