@@ -16,7 +16,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: document.getElementById('message').value,
-      roomname: Rooms._data
+      roomname: Rooms.currentRoom
     };
     var pass = function() {
       App.fetch();

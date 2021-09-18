@@ -7,8 +7,7 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    // TODO: Perform any work which needs to be done
-    // when this view loads.
+    RoomsView.$button.on('submit', RoomsView.handleClick);
   },
 
   render: function() {
@@ -20,6 +19,7 @@ var RoomsView = {
       //   if ($('#rooms select').find('#roomname')) {
       //   // if option value is not a child of the rooms select
       // }
+      //$('#select option[value='roomname']').length > 0;
       RoomsView.renderRoom(roomname);
     }
   },
@@ -29,12 +29,24 @@ var RoomsView = {
     $('#rooms select').append(`<option value ="${roomname}" id = '${roomname}'>${roomname}</option>`);
   },
 
-  handleChange: function(event) {
+  handleChange: function() {
     // TODO: Handle a user selecting a different room.
+    //when select is clicked
+    // rooms.currentRoom = new val
+    var x = document.getElementById('select').value;
+    // console.log(x);
+    Rooms.currentRoom = x;
   },
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
+    // when AddRoom is clicked (function() {
+    // takes data from input and add value to rooms._storage object
+    // })
+    $('#addroom').click(function() {
+      var newRoom = document.getElementById('addroom').value;
+      Rooms._storage[newRoom] = newRoom;
+    });
   }
 
 };
