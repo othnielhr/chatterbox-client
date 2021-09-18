@@ -9,9 +9,14 @@ var MessageView = {
       <div class="chat">
         <div class="username"><%= username %></div>
         <div class="text"><%= text %></div>
-        <div></div>
       </div>
-    `)
+    `),
 
+  renderFriend: _.template(`
+      <div class="chat">
+        <div class="username friend"><%= username %></div>
+        <div class="text"><%= text %></div>
+      </div>
+    `),
 };
 
