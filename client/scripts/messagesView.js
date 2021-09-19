@@ -33,6 +33,7 @@ var MessagesView = {
       // console.log('inside render message func', rendered);
     }
     this.$chats.append(rendered);
+    $('.username').on('click', MessagesView.handleClick);
     // console.log(this.$chats);
   },
 
@@ -44,9 +45,10 @@ var MessagesView = {
     // event.currentTarget.setAttribute('class', 'friend');
     if (Friends._myFriends[username] === undefined) {
       Friends._myFriends[username] = username;
-
+      Friends.toggleStatus();
     } else {
       delete Friends._myFriends[username];
+      Friends.toggleStatus();
     }
     // console.log(Friends._myFriends);
     MessagesView.render();

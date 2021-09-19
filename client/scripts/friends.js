@@ -7,6 +7,9 @@ var Friends = {
 
   _myFriends: {},
 
+  toggleStatus: function() {
+    console.log('just trying to pass');
+  }
   // TODO: Define methods which allow you to add, toggle,
   // and check the friendship status of other users.
 

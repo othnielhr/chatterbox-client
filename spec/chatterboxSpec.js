@@ -84,7 +84,7 @@ describe('chatterbox', function() {
 
   describe('events', function() {
     it('should add a friend upon clicking their username', function() {
-      // sinon.spy(Friends, 'toggleStatus');
+      sinon.spy(Friends, 'toggleStatus');
 
       App.initialize();
       MessagesView.renderMessage({
@@ -93,9 +93,9 @@ describe('chatterbox', function() {
         roomname: 'lobby'
       });
       $('#chats').find('.username').trigger('click');
-      expect(Friends._myFriends['Mel Brooks']).to.equal('Mel Brooks');
+      expect(Friends.toggleStatus.called).to.be.true;
 
-      // Friends.toggleStatus.restore();
+      Friends.toggleStatus.restore();
     });
 
     it('should add a room when clicking add', function() {
